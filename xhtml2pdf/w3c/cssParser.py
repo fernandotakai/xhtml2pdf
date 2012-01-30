@@ -348,6 +348,9 @@ class CSSParser(object):
         """Parses CSS string source using the current cssBuilder.
         Use for embedded stylesheets."""
 
+        if not isinstance(src, unicode):
+            src = src.decode("utf-8")
+
         self.cssBuilder.beginStylesheet()
         try:
 
